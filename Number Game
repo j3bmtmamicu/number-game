@@ -1,0 +1,36 @@
+import random
+
+def pogodi_broj():
+    secret_number = random.randint(1, 100)
+    pokusaja = 0
+
+    print("Bok Marta! Dobro dosla u igru Pogodi Broj.")
+    print("Izabrao sam broj od 1 do 100, a na tebi je da pogodis!")
+
+    while True:
+        guess = int(input("Upisi svoj pokusaj: "))
+        pokusaja += 1
+
+        if guess < secret_number:
+            if secret_number - guess <= 5:
+                print("Jakoo si blizu.Jos malo vise. Pokusaj ponovo")
+            elif secret_number - guess <= 10:
+                print("Nisko si ali se priblizavas.Idi malo vise.Pokusaj ponovo")
+            else:
+                print("Prenisko si, Pokusaj ponovo")
+        elif guess > secret_number:
+            if guess - secret_number <= 5:
+                print("Jakoo si blizu.jos malo nize. Pokusaj ponovo")
+            elif guess - secret_number <= 10:
+                print("Visoko si ali se priblizavas.Idi malo nize. Pokusaj ponovo")
+            else:
+                print("Previsoko si.Pokusaj ponovo")
+        else:
+            print(f"Cestitam! Pogodila si broj {secret_number} u {pokusaja} pokusaja.")
+
+
+if __name__ == "__main__":
+    pogodi_broj()
+
+
+
